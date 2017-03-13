@@ -78,5 +78,24 @@ public class AgendaApp {
 		return telefone;
 		}
 	
+	private static void buscarContato() {
+		out.println("\nBUSCA DE CONTATOS: ");
+		String nome = lerNome();
+		List<Contato> resultado = new ArrayList<>();
+		for (Contato c: contatos) {
+			if (nome.equals(c.getNome())) {
+				resultado.add(c);
+			}
+		}
+		if (resultado.size() == 0) {
+			out.println("Não há contato com este nome!");
+		}else {
+			out.println("\nResultado da busca: ");
+			for (Contato c: resultado){
+				out.println(c);
+			}
+		}
 	}
+}
+
 
